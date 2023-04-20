@@ -41,10 +41,11 @@
  * https://trufflesuite.com/docs/truffle/getting-started/using-the-truffle-dashboard/
  */
 
-// require('dotenv').config();
-// const { MNEMONIC, PROJECT_ID } = process.env;
+require('dotenv').config()
 
-// const HDWalletProvider = require('@truffle/hdwallet-provider');
+const HDWalletProvider = require('@truffle/hdwallet-provider');
+const mnemonic = process.env.MNEMONIC
+const infuraApiKey = process.env.INFURA_APIKEY
 
 
 module.exports = {
@@ -65,11 +66,25 @@ module.exports = {
     // tab if you use this network and you must also set the `host`, `port` and `network_id`
     // options below to some value.
     //
-    // development: {
-    //  host: "127.0.0.1",     // Localhost (default: none)
-    //  port: 8545,            // Standard Ethereum port (default: none)
-    //  network_id: "*",       // Any network (default: none)
-    // },
+    development: {
+     host: "127.0.0.1",     // Localhost (default: none)
+     port: 8545,            // Standard Ethereum port (default: none)
+     network_id: "*",       // Any network (default: none)
+    },
+    goerli: {
+      provider: () => new HDWalletProvider( mnemonic, `https://arbitrum-goerli.infura.io/v3/${infuraApiKey}` ),
+      network_id: 421613,
+      gasPrice: 40000000000,
+      confirmations: 2,
+      skipDryRun: true,
+    },
+    one: {
+      provider: () => new HDWalletProvider( mnemonic, `https://arbitrum-mainnet.infura.io/v3/${infuraApiKey}` ),
+      network_id: 42161,
+      gasPrice: 40000000000,
+      confirmations: 2,
+      skipDryRun: true,
+    },
     //
     // An additional network, but with some advanced options…
     // advanced: {
