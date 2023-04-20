@@ -71,17 +71,11 @@ module.exports = {
      port: 8545,            // Standard Ethereum port (default: none)
      network_id: "*",       // Any network (default: none)
     },
-    goerli: {
-      provider: () => new HDWalletProvider( mnemonic, `https://arbitrum-goerli.infura.io/v3/${infuraApiKey}` ),
+    polygon: {
+      provider: () => new HDWalletProvider( mnemonic, `https://polygon-mainnet.g.alchemy.com/v2/${infuraApiKey}` ),
       network_id: 421613,
-      gasPrice: 40000000000,
-      confirmations: 2,
-      skipDryRun: true,
-    },
-    one: {
-      provider: () => new HDWalletProvider( mnemonic, `https://arbitrum-mainnet.infura.io/v3/${infuraApiKey}` ),
-      network_id: 42161,
-      gasPrice: 40000000000,
+      gas: 3000000,
+      gasPrice: 30000000,
       confirmations: 2,
       skipDryRun: true,
     },
