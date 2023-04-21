@@ -72,10 +72,10 @@ module.exports = {
      network_id: "*",       // Any network (default: none)
     },
     polygon: {
-      provider: () => new HDWalletProvider( mnemonic, `https://polygon-mainnet.g.alchemy.com/v2/${infuraApiKey}` ),
-      network_id: 421613,
-      gas: 3000000,
-      gasPrice: 30000000,
+      provider: () => new HDWalletProvider( mnemonic, `https://polygon-mainnet.infura.io/v3/e9b69e7a1e73427396eb9b8204dbea02` ),
+      network_id: 137,
+      gas: 29000000,
+      gasPrice: 38500000,
       confirmations: 2,
       skipDryRun: true,
     },

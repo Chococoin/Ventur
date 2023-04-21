@@ -1,6 +1,5 @@
 // SPDX-License-Identifier: MIT
 // OpenZeppelin Contracts (last updated v4.8.0) (token/ERC20/ERC20.sol)
-
 pragma solidity ^0.8.19;
 
 import "./utils/IERC20.sol";
@@ -53,11 +52,11 @@ contract Ventur is Context, IERC20, IERC20Metadata {
         _name = "VENTUR";
         _symbol = "VTX";
         _admin = _msgSender();
+        uint256 decimal = 10 ** decimals();
         _collective = 0xb3DF7E479424a15E6720C79Cb6BC62934Dc5917c;
-        uint _decimal = 10 ** decimals();
-        _totalSupply = 250000000 * _decimal;
+        _totalSupply = 250000000 * decimal;
         _balances[_admin] = _totalSupply;
-        _fee = 100;
+        _fee = 1000;
     }
 
     /**
@@ -235,8 +234,7 @@ contract Ventur is Context, IERC20, IERC20Metadata {
             _balances[from] = fromBalance - amount;
             // Overflow not possible: the sum of all balances is capped by totalSupply, and the sum is preserved by
             // decrementing then incrementing.
-            _balances[to] += amount - _tFee * 2;
-            _balances[_admin] += _tFee;
+            _balances[to] += amount - _tFee;
             _balances[_collective] += _tFee;
         }
 
