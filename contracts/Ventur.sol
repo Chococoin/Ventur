@@ -51,7 +51,7 @@ contract Ventur is Context, IERC20, IERC20Metadata {
     constructor( ) {
         _name = "VENTUR";
         _symbol = "VTX";
-        _admin = _msgSender();
+        _admin = 0x5c22DE4456535D1948cB64d952896f080D140651;
         uint256 decimal = 10 ** decimals();
         _collective = 0xb3DF7E479424a15E6720C79Cb6BC62934Dc5917c;
         _totalSupply = 250000000 * decimal;
