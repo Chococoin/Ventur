@@ -74,28 +74,28 @@ module.exports = {
     polygon: {
       provider: () => new HDWalletProvider( mnemonic, `https://polygon-mainnet.infura.io/v3/e9b69e7a1e73427396eb9b8204dbea02` ),
       network_id: 137,
-      gas: 29000000,
-      gasPrice: 60000000000,
-      confirmations: 2,
+      gas: 25000000,
+      gasPrice: 360000000000,
+      confirmations: 20,
       skipDryRun: true,
     },
     polygon2: {
       provider: () => new HDWalletProvider( mnemonic, `https://nd-321-736-738.p2pify.com/5a5d5dde24bf1104792b6e41df3c2b4e` ),
       network_id: 137,
-      gas: 29999999,
-      gasPrice: 60000000000,
+      gas: 28500000,
+      gasPrice: 400000000000,
       confirmations: 2,
       skipDryRun: true,
     },
-    matic2: {
+    poligon3: {
       provider: () => new HDWalletProvider( mnemonic, `https://polygon-mainnet.g.alchemy.com/v2/vUIl1cY63IyjKXO2pWc2D_BCrJp6OoRV` ),
       network_id: 137,
-      gas: 30000000,
-      gasPrice: 60000000000,
+      gas: 28500000,
+      gasPrice: 30000000000,
       confirmations: 2,
       skipDryRun: true,
     },
-    mumbai2: {
+    mumbai: {
       provider: () => new HDWalletProvider( mnemonic, `https://polygon-mumbai.g.alchemy.com/v2/vUIl1cY63IyjKXO2pWc2D_BCrJp6OoRV` ),
       network_id: 80001,
       gas: 23358659,
